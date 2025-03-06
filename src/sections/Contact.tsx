@@ -9,7 +9,7 @@ export const ContactSection = () => {
           <div
             className="absolute inset-0 opacity-5 -z-10"
             style={{
-              backgroundImage: `url${grainImage.src}`,
+              backgroundImage: `url(${grainImage.src})`,
             }}
           ></div>
           <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-center">
