@@ -88,16 +88,6 @@ const hobbies = [
   },
 ];
 
-const mapContainerStyle = {
-  width: "100%",
-  height: "100%",
-};
-
-const center = {
-  lat: 23.022505,
-  lng: 72.571365,
-};
-
 export const AboutSection = () => {
   const constraintRef = useRef(null);
   return (
@@ -116,7 +106,9 @@ export const AboutSection = () => {
                 description="Explore the book shaping my perspectives"
               />
               <div className="w-40 mx-auto mt-2 md:mt-0">
+            <motion.div whileHover={{ scale: 1.1, rotate: 3, transition: { duration: 0.5 }, }}>
                 <Image src={bookImage} alt="Book cover" />
+            </motion.div>
               </div>
             </Card>
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">
@@ -139,7 +131,7 @@ export const AboutSection = () => {
             </Card>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
-            <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2">
+            <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2" title="move hobbies freely">
               <CardHeader
                 title="Beyond the Code"
                 description="Explore my interest and hobbies beyond the digital realm."
