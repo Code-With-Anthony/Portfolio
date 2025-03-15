@@ -16,4 +16,8 @@
   .container {
     @apply lg:max-w-5xl;
   }
+
+  .testimonialContainer {
+    @apply lg:max-w-7xl;
+  }
 }
