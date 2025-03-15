@@ -6,9 +6,21 @@ import Image from "next/image";
 import JavascriptIcon from "@/assets/icons/square-js.svg";
 import HTML5Icon from "@/assets/icons/html5.svg";
 import CSS3Icon from "@/assets/icons/css3.svg";
-import ChromeIcon from "@/assets/icons/chrome.svg";
 import GithubIcon from "@/assets/icons/github.svg";
+import ZodIcon from "@/assets/icons/zod.svg";
+import TesseractIcon from "@/assets/icons/tesseract.svg";
 import ReactIcon from "@/assets/icons/react.svg";
+import NodeJSIcon from "@/assets/icons/nodejs.svg";
+import TailwindCSSIcon from "@/assets/icons/tailwind-css.svg";
+import MongoDBIcon from "@/assets/icons/mongodb.svg";
+import PostManIcon from "@/assets/icons/postman-api.svg";
+import ExpressJsIcon from "@/assets/icons/expressJSIcon.svg";
+import TypeScriptIcon from "@/assets/icons/typescriptIcon.svg";
+import MYSQLIcon from "@/assets/icons/mysql.svg";
+import MUIIcon from "@/assets/icons/material-ui.svg";
+import PythonIcon from "@/assets/icons/python.svg";
+import ReduxIcon from "@/assets/icons/redux.svg";
+import FigmaIcon from "@/assets/icons/figma.svg";
 import { CardHeader } from "@/components/CardHeader";
 import { ToolboxItems } from "@/components/ToolboxItems";
 import mapImage from "@/assets/images/ABDImage.png";
@@ -17,72 +29,75 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 
 const toolBoxItems = [
-  {
-    title: "Javascript",
-    iconType: JavascriptIcon,
-  },
-  {
-    title: "HTML5",
-    iconType: HTML5Icon,
-  },
-  {
-    title: "CSS3",
-    iconType: CSS3Icon,
-  },
-  {
-    title: "React",
-    iconType: ReactIcon,
-  },
-  {
-    title: "Chrome",
-    iconType: ChromeIcon,
-  },
-  {
-    title: "Github",
-    iconType: GithubIcon,
-  },
+  // Core Web Technologies
+  { title: "HTML5", iconType: HTML5Icon },
+  { title: "CSS3", iconType: CSS3Icon },
+  { title: "JavaScript", iconType: JavascriptIcon },
+
+  // Frontend Technologies & Frameworks
+  { title: "React", iconType: ReactIcon },
+  { title: "Redux", iconType: ReduxIcon },
+  { title: "TypeScript", iconType: TypeScriptIcon },
+  { title: "Tailwind", iconType: TailwindCSSIcon },
+  { title: "MUI", iconType: MUIIcon },
+
+  // Backend Technologies & Databases
+  { title: "Node.js", iconType: NodeJSIcon },
+  { title: "ExpressJS", iconType: ExpressJsIcon },
+  { title: "MongoDB", iconType: MongoDBIcon },
+  { title: "MySQL", iconType: MYSQLIcon },
+
+  // Tools & Libraries
+  { title: "GitHub", iconType: GithubIcon },
+  { title: "Postman", iconType: PostManIcon },
+  { title: "Zod", iconType: ZodIcon },
+  { title: "Tesseract", iconType: TesseractIcon },
+
+  // Other Skills & Design Tools
+  { title: "Python", iconType: PythonIcon },
+  { title: "Figma", iconType: FigmaIcon },
 ];
 
 const hobbies = [
   {
-    title: "Painting",
-    emoji: "🎨",
+    title: "Coding",
+    emoji: "💻",
     left: "5%",
     top: "5%",
   },
   {
-    title: "Photography",
-    emoji: "📷",
+    title: "Documentation",
+    emoji: "📚",
     left: "50%",
     top: "5%",
   },
   {
-    title: "Hiking",
-    emoji: "🥾",
+    title: "Open Source Contribution",
+    emoji: "🌍",
     left: "35%",
     top: "40%",
   },
   {
-    title: "Gaming",
-    emoji: "🎮",
+    title: "Web Design",
+    emoji: "🌐",
     left: "10%",
     top: "35%",
   },
   {
-    title: "Music",
-    emoji: "🎶",
+    title: "Puzzles",
+    emoji: "🧩",
     left: "70%",
     top: "45%",
   },
   {
-    title: "Fitness",
-    emoji: "🏋",
+    title: "Tech Meetups",
+    emoji: "🤖",
     left: "5%",
     top: "65%",
   },
   {
-    title: "Reading",
-    emoji: "📚",
+    title: "Blogging",
+    emoji: "✍️",
     left: "45%",
     top: "70%",
   },
@@ -93,24 +108,43 @@ export const AboutSection = () => {
   return (
     <div className="py-20 lg:py-28">
       <div className="container">
-        <SectionHeader
-          eyebrow="About Me"
-          title="A Glimpse into my world"
-          description="Learn more about who I am, What I do, and what inspires me."
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <SectionHeader
+            eyebrow="About Me"
+            title="A Glimpse into my world"
+            description="Learn more about who I am, What I do, and what inspires me."
+          />
+        </motion.div>
         <div className="mt-20 flex flex-col gap-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-5 lg:grid-cols-3">
-            <Card className="h-[320px] md:col-span-2 lg:col-span-1">
-              <CardHeader
-                title="My Reads"
-                description="Explore the book shaping my perspectives"
-              />
-              <div className="w-40 mx-auto mt-2 md:mt-0">
-            <motion.div whileHover={{ scale: 1.1, rotate: 3, transition: { duration: 0.5 }, }}>
-                <Image src={bookImage} alt="Book cover" />
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="md:col-span-2 lg:col-span-1"
+            >
+              <Card className="h-[320px]">
+                <CardHeader
+                  title="My Reads"
+                  description="Explore the book shaping my perspectives"
+                />
+                <div className="w-40 mx-auto mt-2 md:mt-0">
+                  <motion.div
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: 3,
+                      transition: { duration: 0.5 },
+                    }}
+                  >
+                    <Image src={bookImage} alt="Book cover" />
+                  </motion.div>
+                </div>
+              </Card>
             </motion.div>
-              </div>
-            </Card>
             <Card className="h-[320px] md:col-span-3 lg:col-span-2">
               <CardHeader
                 title="My Toolbox"
@@ -131,7 +165,10 @@ export const AboutSection = () => {
             </Card>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-3 gap-8">
-            <Card className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2" title="move hobbies freely">
+            <Card
+              className="h-[320px] p-0 flex flex-col md:col-span-3 lg:col-span-2"
+              title="move hobbies freely"
+            >
               <CardHeader
                 title="Beyond the Code"
                 description="Explore my interest and hobbies beyond the digital realm."
@@ -145,6 +182,7 @@ export const AboutSection = () => {
                     style={{ left: hobby.left, top: hobby.top }}
                     drag
                     dragConstraints={constraintRef}
+                    whileHover={{ scale: 1.2, transition: { duration: 0.3 } }}
                   >
                     <span className="font-medium text-gray-950">
                       {hobby.title}

@@ -7,6 +7,7 @@ import { SectionHeader } from "@/components/SectionHeader";
 import Image from "next/image";
 import { Card } from "@/components/Card";
 import { Fragment } from "react";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -44,13 +45,20 @@ const testimonials = [
 export const TestimonialsSection = () => {
   return (
     <div className="py-16 lg:py-24">
-      <div className="container">
-        <SectionHeader
-          eyebrow="Happy clients"
-          title="What Clients Say about me"
-          description="Don't just take my word for it. See what my clients have to say about my
+      <div className="testimonialContainer">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <SectionHeader
+            eyebrow="Happy clients"
+            title="What Clients Say about me"
+            description="Don't just take my word for it. See what my clients have to say about my
         work."
-        />
+          />
+        </motion.div>
+
         <div className="mt-12 lg:mt-20 flex overflow-x-clip [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)] py-4 -my-4">
           <div className="flex gap-8 pr-8 flex-none animate-move-left [animation-duration:90s] hover:[animation-play-state:paused]">
             {[...new Array(2)].fill(0).map((_, ind) => (
