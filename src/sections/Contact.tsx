@@ -1,11 +1,19 @@
 import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
+import { Card } from "@/components/Card";
+import { useState } from "react";
 
 export const ContactSection = () => {
-  const handleMailClick = () => {
-    window.location.href =
-      "mailto:anthonydourado111@gmail.com?subject=Inquiry&body=Hello Anthony, I would like to discuss...";
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleOpenCalenderBooking = () => {
+    setOpenModal(true);
   };
+
+  const handleCloseCalenderBooking = () => {
+    setOpenModal(false);
+  };
+
   return (
     <div className="py-16 pt-12 lg:py-24 lg:pt-20">
       <div className="container">
@@ -28,7 +36,10 @@ export const ContactSection = () => {
             </div>
             <div>
               <button
-                onClick={handleMailClick}
+                // onClick={() =>
+                //   window.open("https://calendly.com/anthonydourado111")
+                // }
+                onClick={handleOpenCalenderBooking}
                 className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-950"
               >
                 <span className="font-semibold">Contact Me</span>
@@ -37,6 +48,27 @@ export const ContactSection = () => {
             </div>
           </div>
         </div>
+
+        {/* modal */}
+        {openModal && (
+          <div
+            className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50"
+            onClick={handleCloseCalenderBooking}
+          >
+            <Card
+              className="bg-white rounded-lg p-6 text-black"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h2 className="text-xl font-semibold mb-4">
+                Schedule Meeting with me
+              </h2>
+              <p>
+                Welcome to my scheduling page. Please follow the instructions to
+                add an event to my calendar.
+              </p>
+            </Card>
+          </div>
+        )}
       </div>
     </div>
   );
