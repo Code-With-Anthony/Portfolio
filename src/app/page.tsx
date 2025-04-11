@@ -4,7 +4,7 @@ import { Header } from "@/sections/Header";
 import { HeroSection } from "@/sections/Hero";
 import { ProjectsSection } from "@/sections/Projects";
 import { TapeSection } from "@/sections/Tape";
-import { TestimonialsSection } from "@/sections/Testimonials";
+import { Certifications } from "@/sections/Certifications";
 import { ContactSection } from "@/sections/Contact";
 import { Footer } from "@/sections/Footer";
 import { motion } from "framer-motion";
@@ -77,7 +77,7 @@ export default function Home() {
         <TapeSection />
       </motion.section>
 
-      <TestimonialsSection />
+      <Certifications />
       <motion.section
         id="about"
         initial="hidden"
