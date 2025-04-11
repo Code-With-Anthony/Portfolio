@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@tailwindcss/line-clamp;
 
 @layer base {
   .nav-item {
@@ -17,7 +18,7 @@
     @apply lg:max-w-5xl;
   }
 
-  .testimonialContainer {
+  /* .CertificationContainer {
     @apply lg:max-w-7xl;
-  }
+  } */
 }
