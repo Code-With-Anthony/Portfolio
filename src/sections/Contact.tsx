@@ -2,10 +2,6 @@ import ArrowUpRightIcon from "@/assets/icons/arrow-up-right.svg";
 import grainImage from "@/assets/images/grain.jpg";
 
 export const ContactSection = () => {
-  const handleMailClick = () => {
-    window.location.href =
-      "mailto:anthonydourado111@gmail.com?subject=Inquiry&body=Hello Anthony, I would like to discuss...";
-  };
   return (
     <div className="py-16 pt-12 lg:py-24 lg:pt-20">
       <div className="container">
@@ -22,16 +18,21 @@ export const ContactSection = () => {
                 Let&apos;s create something amazing together
               </h2>
               <p className="text-sm md:text-base mt-2">
-                Ready to bring your next project to life? Let&apos;s connect and
-                discuss. I can help you achieve your goals.
+                Ready to bring your next project to life? Let&apos;s connect
+                over Google Meet & discuss. I can help you achieve your goals.
               </p>
             </div>
             <div>
               <button
-                onClick={handleMailClick}
+                onClick={() =>
+                  window.open(
+                    "https://calendar.google.com/calendar/appointments/schedules/AcZssZ2-2pXiG0lHpwA7HDEMeez22MRHDB8ldVcOHLZym1f6Yl4VFls5sn61DAV_pYMKjBE9PCASOMCp?gv=true",
+                    "_blank"
+                  )
+                }
                 className="text-white bg-gray-900 inline-flex items-center px-6 h-12 rounded-xl gap-2 w-max border border-gray-950"
               >
-                <span className="font-semibold">Contact Me</span>
+                <span className="font-semibold">Book Calendar</span>
                 <ArrowUpRightIcon className="size-4" />
               </button>
             </div>
