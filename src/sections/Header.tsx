@@ -1,17 +1,14 @@
+import { sections } from "@/data/HeaderData";
 import { useEffect, useState } from "react";
 
 export const Header = () => {
   const [activeSection, setActiveSection] = useState("home");
-  const sections = ["home", "projects", "about", "contact"];
 
   const handleSectionClick = (sectionName: string) => {
     setActiveSection(sectionName);
   };
 
   const handleScroll = (): void => {
-    // Get current scroll position
-    const scrollPosition = window.scrollY;
-
     // Loop through each section to find which one is in View
     sections.forEach((section) => {
       const element = document.getElementById(section);
